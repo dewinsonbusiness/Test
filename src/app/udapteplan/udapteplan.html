@@ -1,0 +1,39 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="plan_name">plan_name:</label>
+    <input id="plan_name" formControlName="plan_name">
+  </div>
+  <div>
+    <label for="planDetail_from">planDetail_from:</label>
+    <input id="planDetail_from" type="number" formControlName="planDetail_from" >
+  </div>
+
+  <div>
+    <label for="planDetail_to">planDetail_to:</label>
+    <input id="planDetail_to" type="number" formControlName="planDetail_to" >
+  </div>
+   <div>
+    <label for="planDetail_priceXdoc">planDetail_priceXdoc:</label>
+    <input id="planDetail_priceXdoc" type="text" formControlName="planDetail_priceXdoc" >
+  </div>
+   <div>
+    <label for="planDetail_tolerance">planDetail_tolerance:</label>
+    <input id="planDetail_tolerance" type="number" formControlName="planDetail_tolerance" >
+  </div>
+
+
+
+
+
+
+  <button type="submit">Save Plans</button>
+
+
+
+<!-- plan_name: this.form.value.plan_name as string,
+       planDetail_from: this.form.value.planDetail_from as string,
+       planDetail_to: this.form.value.planDetail_to as string,
+       planDetail_priceXdoc: this.form.value.planDetail_priceXdoc as string,
+       planDetail_priceXdoc: this.form.value.planDetail_tolerance as string -->
+
+</form>

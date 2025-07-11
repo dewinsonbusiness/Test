@@ -1,0 +1,119 @@
+
+
+   <div class="table-container">
+  <!-- Filtering Section -->
+  <div class="filtering-section">
+    <h3>Filtering</h3>
+    <div class="filter-controls">
+      <button class="clear-btn">
+        <i class="clear-icon">🗑️</i>
+        Clear
+      </button>
+      <div class="search-container">
+        <input
+          type="text"
+          placeholder="Search keyword"
+          class="search-input"
+        />
+        <i class="search-icon">🔍</i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Data Table -->
+  <div class="table-wrapper">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th class="sortable">
+            Name
+            <i class="sort-icon">⏷</i>
+          </th>
+          <th class="sortable">
+            Country
+            <i class="sort-icon">⏷</i>
+          </th>
+          <th class="sortable">
+            Agent
+            <i class="sort-icon">⏷</i>
+          </th>
+          <th class="sortable">
+            Date
+            <i class="sort-icon">⏷</i>
+          </th>
+          <th class="sortable">
+            Balance
+            <i class="sort-icon">⏷</i>
+          </th>
+          <th class="sortable">
+            Status
+            <i class="sort-icon">⏷</i>
+          </th>
+          <th class="sortable">
+            Activity
+            <i class="sort-icon">⏷</i>
+          </th>
+          <th class="sortable">
+            Verified
+            <i class="sort-icon">⏷</i>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+
+      @for(data of EncfData?.data; track data ){
+          <tr>
+          <td>
+
+          </td>
+          <td>
+            <div class="country-cell">
+
+
+            </div>
+          </td>
+          <td>
+            <div class="agent-cell">
+             {{data.tipoNcf_name}}
+
+            </div>
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+            <span class="status-badge status-unqualified">
+
+            </span>
+          </td>
+          <td>
+            <div class="activity-bar">
+              <div class="activity-progress" style="width: 17%"></div>
+            </div>
+          </td>
+          <td>
+            <span class="status-badge status-unqualified">
+
+            </span>
+          </td>
+        </tr>
+      }
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+
+
+
+
+    </div>
+
+
+
+
+
+

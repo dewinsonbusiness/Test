@@ -1,0 +1,39 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="plan_name">plan_name:</label>
+    <input id="plan_name" formControlName="plan_name" required>
+  </div>
+  <div>
+    <label for="planDetail_from">planDetail_from:</label>
+    <input id="planDetail_from" type="text" formControlName="planDetail_from" required>
+  </div>
+
+  <div>
+    <label for="planDetail_to">planDetail_to:</label>
+    <input id="planDetail_to" type="number" formControlName="planDetail_to" required>
+  </div>
+
+  <div>
+    <label for="planDetail_tolerance">planDetail_tolerance:</label>
+    <input id="planDetail_tolerance" type="text" formControlName="planDetail_tolerance" required>
+  </div>
+  <label for="planDetail_priceXdoc">planDetail_priceXdoc:</label>
+    <input id="planDetail_priceXdoc" type="text" formControlName="planDetail_priceXdoc" required>
+
+  <div>
+
+
+  </div>
+
+
+
+
+  <button type="submit">Save Company</button>
+
+
+
+
+
+</form>
+
+

@@ -1,0 +1,25 @@
+<!-- From Uiverse.io by nathann09 --> 
+
+   
+<div class="body">
+
+     <form class="form"  [formGroup]="loginForm"  (submit)="onSubmit()">
+       <p class="form-title">Iniciar Sección</p>
+        <div class="input-container">
+          <input type="email" placeholder="Introduce tu email" formControlName="email">
+          <span>
+          </span>
+      </div>
+      <div class="input-container">
+          <input type="password" placeholder="introduce tu contraseña"   formControlName="password">
+        </div>
+         <button type="submit" class="submit">
+        Iniciar Sección
+      </button>
+
+      <p class="signup-link">
+        No tienes cuenta?
+        <a href="">Registrate</a>
+      </p>
+   </form>
+</div>

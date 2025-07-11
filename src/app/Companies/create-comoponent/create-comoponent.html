@@ -1,0 +1,34 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="tenant_name">tenant_name:</label>
+    <input id="tenant_name" formControlName="tenant_name" required>
+  </div>
+  <div>
+    <label for="tenant_cedrnc">tenant_cedrnc:</label>
+    <input id="tenant_cedrnc" type="text" formControlName="tenant_cedrnc" required>
+  </div>
+
+  <div>
+    <label for="plan_id">plan_id:</label>
+    <input id="plan_id" type="number" formControlName="plan_id" required>
+  </div>
+
+
+
+
+  <button type="submit">Save Company</button>
+
+
+
+
+
+</form>
+<!-- created_at:string | null,
+deleted_at:string | null,
+plan_id:number,
+plan_name:string,
+plan_status:number,
+tenant_cedrnc:string,
+tenant_id:number,
+tenant_name:string,
+udapted_at:string | null -->
