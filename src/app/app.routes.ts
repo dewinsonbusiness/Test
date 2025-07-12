@@ -10,12 +10,13 @@ import { Saveplan } from './Saveplan/saveplan/saveplan';
 import { Udapteplan } from './udapteplan/udapteplan';
 import { Update } from './Companies/update/update';
 import { authGuard } from './auth-guard';
+import { Dashboard } from './Dashboard/dashboard/dashboard';
 export const routes: Routes = [
 
 
     {
          path: 'login',
-         
+
 
          component: User
 
@@ -87,6 +88,14 @@ export const routes: Routes = [
       component:Update,
       canActivate: [authGuard]
     },
+    
+    {
+
+      path:'Dashboard',
+      component:Dashboard,
+      canActivate: [authGuard]
+    }
+
 
 
 

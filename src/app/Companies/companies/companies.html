@@ -10,9 +10,9 @@
         Clear
       </button>
       <div class="search-container">
-        <input 
-          type="text" 
-          placeholder="Search keyword" 
+        <input
+          type="text"
+          placeholder="Search keyword"
           class="search-input"
         />
         <i class="search-icon">🔍</i>
@@ -30,11 +30,11 @@
             <i class="sort-icon">⏷</i>
           </th>
           <th class="sortable">
-            Country
+            Cedrnc
             <i class="sort-icon">⏷</i>
           </th>
           <th class="sortable">
-            Agent
+            status
             <i class="sort-icon">⏷</i>
           </th>
           <th class="sortable">
@@ -60,7 +60,7 @@
         </tr>
       </thead>
       <tbody>
-        
+
       @for(company of Companiese; track company.tenant_id){
           <tr>
           <td>
@@ -68,7 +68,7 @@
           </td>
           <td>
             <div class="country-cell">
-              
+
               {{company.tenant_cedrnc}}
             </div>
           </td>
@@ -106,12 +106,12 @@
   </div>
 
   <!-- Pagination -->
- 
 
-  
-     
+
+
+
     </div>
-  
+
 
 
 
