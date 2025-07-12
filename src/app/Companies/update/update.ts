@@ -1,15 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, Validators, ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ServicesUser } from '../../UserLogic/services-user';
 
 @Component({
-  selector: 'app-create-comoponent',
+  selector: 'app-update',
   imports: [ReactiveFormsModule],
-  templateUrl: './create-comoponent.html',
-  styleUrl: './create-comoponent.css'
+  templateUrl: './update.html',
+  styleUrl: './update.css'
 })
-export class CreateComoponent {
- fb = inject(FormBuilder);
+export class Update {
+  fb = inject(FormBuilder);
   UsersServices = inject(ServicesUser)
 
 
@@ -18,6 +18,10 @@ export class CreateComoponent {
     plan: [0, [Validators.required]],
     tenant_name: ['', [Validators.required]],
     tenant_cedrnc: ['', [Validators.required]],
+    tenant_id: [0, [Validators.required]],
+
+
+
 
   });
 

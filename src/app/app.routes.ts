@@ -8,31 +8,38 @@ import { CreateComoponent } from './Companies/create-comoponent/create-comoponen
 import { SavePlansComponent } from './Plan/save-plans-component/save-plans-component';
 import { Saveplan } from './Saveplan/saveplan/saveplan';
 import { Udapteplan } from './udapteplan/udapteplan';
+import { Update } from './Companies/update/update';
+import { authGuard } from './auth-guard';
 export const routes: Routes = [
 
 
     {
-         path: '',
-        component: User
+         path: 'login',
+         
+
+         component: User
 
     },
 
     {
 
     path:'companies',
-    component: Companies
+    component: Companies,
+    canActivate: [authGuard]
 
     },
 
     {
         path:'encf',
-        component:EncfComponents
+        component:EncfComponents,
+        canActivate: [authGuard]
     },
 
     {
 
       path:'plan',
-      component:Plan
+      component:Plan,
+      canActivate: [authGuard]
 
 
 
@@ -44,32 +51,45 @@ export const routes: Routes = [
 
       path:'UsersList',
 
-      component:UserComponent
+      component:UserComponent,
+      canActivate: [authGuard]
     },
 
     {
 
 
       path:'CreateComoponent',
-      component:CreateComoponent
+      component:CreateComoponent,
+      canActivate: [authGuard]
     },
 
     {
 
       path:'SavePlansComponent',
       component:SavePlansComponent
+      ,canActivate: [authGuard]
     },
 
     {
 
       path:'Saveplan',
-      component:Saveplan
+      component:Saveplan,
+      canActivate: [authGuard]
     },
 
     {
       path:'Udapteplan',
-      component:Udapteplan
-    }
+      component:Udapteplan,
+      canActivate: [authGuard]
+    },
+      {
+      path:'udaptecompany',
+      component:Update,
+      canActivate: [authGuard]
+    },
+
+
+
 
 
 ];

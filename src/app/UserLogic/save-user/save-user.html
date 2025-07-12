@@ -1,16 +1,27 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form>
   <div>
-    <label for="tenant_name">tenant_name:</label>
+    <label for="tenant_name">UserName:</label>
     <input id="tenant_name" formControlName="tenant_name" required>
   </div>
   <div>
-    <label for="tenant_cedrnc">tenant_cedrnc:</label>
+    <label for="tenant_cedrnc">Email</label>
     <input id="tenant_cedrnc" type="text" formControlName="tenant_cedrnc" required>
   </div>
 
   <div>
     <label for="plan">plan:</label>
     <input id="plan" type="number" formControlName="plan" required>
+  </div>
+<div>
+    <label for="tenant_id">tenant_id</label>
+    <select name="tenant_id" id=""></select>
+    <option value=""></option>
+
+
+    
+    <input id="tenant_id" type="number" formControlName="tenant_id" required>
+
+
   </div>
 
 

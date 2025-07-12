@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { company } from '../Interfaces/interfaces';
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,8 @@ export class ServicesUser {
   private url: string = 'http://api.portal-dev.apps.rancher.sg.local/api/auth/login';
   private urlCompany: string = 'http://api.portal-dev.apps.rancher.sg.local/api/get/companies';
   private urlCreate: string = 'http://api.portal-dev.apps.rancher.sg.local/api/create/company'
+  private urlUpdate: string = 'http://api.portal-dev.apps.rancher.sg.local/api/update/company'
+  private refreshToken:string = 'http://api.portal-dev.apps.rancher.sg.local/api/auth/refresh'
 
   companies:company[]=[]
 
@@ -68,16 +71,43 @@ export class ServicesUser {
 
 
 
-     CreateCompany (company: company){
-      return this.http.post(this.urlCreate, company, { headers: this.headers });
+     CreateCompany (form:FormGroup){
+      return this.http.post(this.urlCreate, form, { headers: this.headers });
 }
 
-deleteCompany(ids: number[]) {
+  getCompanies() {
+    return this.http.get<company[]>(this.urlCompany, { headers: this.headers });
+  }
+
+  getToken(): string | null {
+    return this.token;
+  }
+
+
+  setToken(token: string): void {
+    this.token = token;
+    localStorage.setItem('token', token);
+  }
+  refreshToke(){
+    return this.http.get(this.refreshToken, { headers: this.headers });
+    }
+
+  isLoggedIn(): boolean {
+    return !!this.token;
+
+  }
+  
+
+  logout(): void {
+    this.token = null;
+    localStorage.removeItem('token');
+  }
+   deleteCompany(ids: number[]) {
   const options = {
     headers: this.headers,
     body: { ids }
   };
-  this.http.delete("http://api.portal-dev.apps.rancher.sg.local/api/delete/companies", options)
+     this.http.delete("http://api.portal-dev.apps.rancher.sg.local/api/delete/companies", options)
     .subscribe(
       response => {
         console.log('Companies deleted:', response);
@@ -87,5 +117,10 @@ deleteCompany(ids: number[]) {
       }
     );
 }
+
+
+     updateCompany (form:FormGroup){
+      return this.http.put(this.urlUpdate, form, { headers: this.headers });
+ }
 
 }
